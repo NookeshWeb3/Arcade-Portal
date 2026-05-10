@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Gaming Portal</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/leaderboard.css">
+</head>
+<body>
+    <!-- Animated Background Particles -->
+    <div class="bg-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Initial Welcome Screen -->
+    <section id="welcome-screen" class="screen active">
+        <div class="glass-card welcome-box">
+            <h1 class="glitch-text" data-text="HELLO 👋">HELLO 👋</h1>
+            <p class="subtitle">YOUR NAME PLEASE</p>
+            <div class="input-group">
+                <input type="text" id="user-name" placeholder="Enter username..." autocomplete="off">
+                <button id="enter-btn" class="glow-button">ENTER</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Portal Screen -->
+    <section id="portal-screen" class="screen">
+        <header class="portal-header">
+            <h2 id="greeting">Welcome, Gamer 🎮</h2>
+            <div class="neon-underline"></div>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="leaderboard-panel">
+                <div class="leaderboard-title">🏆 Top Players</div>
+                <div class="leaderboard-header">
+                    <span>Rank</span>
+                    <span>Player</span>
+                    <span>Game</span>
+                    <span>Score</span>
+                    <span>Time</span>
+                </div>
+                <div id="top-players-list">
+                    <!-- Top players will be injected here -->
+                </div>
+            </div>
+
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">👤</div>
+                    <div class="profile-name" id="curr-player-name">Guest</div>
+                </div>
+                <div class="profile-stats" id="curr-player-stats">
+                    <!-- Stats will be injected here -->
+                </div>
+                <div class="activity-feed">
+                    <div class="activity-title">Recent Activity</div>
+                    <div id="curr-player-activity">
+                        <!-- Activity will be injected here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-grid-container" style="grid-column: 1 / -1;">
+                <div class="game-grid">
+                    <!-- Snake Game Card -->
+                    <div class="game-card" data-game="games/snake/snake.html">
+                        <div class="card-inner">
+                            <div class="preview-area">
+                                <div class="game-icon snake-icon">🐍</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="category">ARCADE</div>
+                                <h3>Snake Game</h3>
+                                <p>The classic arcade experience. Eat, grow, and don't hit the walls!</p>
+                                <button class="play-btn">PLAY NOW</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Brick Breaker Card -->
+                    <div class="game-card" data-game="games/brickbreaker/brickbreaker.html">
+                        <div class="card-inner">
+                            <div class="preview-area">
+                                <div class="game-icon brick-icon">🧱</div>
+                            </div>
+                            <div class="card-content">
+                                <div class="category">ACTION</div>
+                                <h3>Brick Breaker</h3>
+                                <p>Shatter the bricks with precision and speed. Don't let the ball drop!</p>
+                                <button class="play-btn">PLAY NOW</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Modal Overlay -->
+    <div id="game-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+            <iframe id="game-frame" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <footer class="portal-footer">
+        <p>&copy; 2026 Arcade Platform | Built for Gamers</p>
+    </footer>
+
+    <script type="module" src="assets/js/script.js"></script>
+</body>
+</html>
